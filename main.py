@@ -108,6 +108,18 @@ class Navigation:
         dy = first_point.y - second_point.y
         return (dx**2 + dy**2)**0.5
 
+    def __repr__(self):
+        return (
+            f'{self.__class__.__name__}(base_point={self._base_point!r}, '
+            f'other_points={self._other_points})'
+        )
+
+    def __str__(self):
+        return (
+            f'Маршрут из "{self._base_point}" через '
+            f'{[str(pnt) for pnt in self._other_points]}'
+        )
+
 
 if __name__ == '__main__':
     base = (0, 2, 'Почтовое отделение')
